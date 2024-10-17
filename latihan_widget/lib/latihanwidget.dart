@@ -45,7 +45,7 @@ class WidgetDemo extends StatelessWidget {
             ),
             Image.network(
               "https://picsum.photos/id/58/300/200",
-              width: double.infinity,
+              width: doub-le.infinity,
               height: 200,
               fit: BoxFit.contain ,
             ),
