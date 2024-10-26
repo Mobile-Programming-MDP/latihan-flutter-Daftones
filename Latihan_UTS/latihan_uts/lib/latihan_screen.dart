@@ -176,6 +176,27 @@ class LatihanScreen extends StatelessWidget {
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold),
                               ),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Colors.red,
+                                ),
+                                width: double.infinity,
+                                height: 50,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Lihat Map",
+                                      style: TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
                         ),
