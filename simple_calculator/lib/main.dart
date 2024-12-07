@@ -25,7 +25,6 @@ class _HomePageState extends State<HomePage> {
   var userInput = '';
   var answer = '0';
 
-  // Array of buttons
   final List<String> buttons = [
     'C',
     '+/-',
@@ -172,16 +171,19 @@ class _HomePageState extends State<HomePage> {
     String finalUserInput = userInput.replaceAll('x', '*');
 
     try {
-      Parser p = Parser();
-      Expression exp = p.parse(finalUserInput);
+      Parser parser = Parser();
+      Expression exp = parser.parse(finalUserInput);
       ContextModel cm = ContextModel();
-      double eval = exp.evaluate(EvaluationType.REAL, cm);
+      double result = exp.evaluate(EvaluationType.REAL, cm);
+
       setState(() {
-        answer = eval.toString();
+        answer = result.toString();
+        userInput = ""; // Mengganti userInput dengan hasil perhitungan
       });
     } catch (e) {
       setState(() {
         answer = "Error";
+        userInput = ''; // Jika ada error, kosongkan input
       });
     }
   }
